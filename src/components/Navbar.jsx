@@ -65,9 +65,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-luxury-gold hover:bg-luxury-dark-gold text-luxury-black font-semibold px-6 py-3 rounded-sm transition-all duration-300 uppercase tracking-wider text-xs">
-              Book Now
-            </button>
+            <Link to="/booking">
+              <button className="bg-luxury-gold hover:bg-luxury-dark-gold text-luxury-black font-semibold px-6 py-3 rounded-sm transition-all duration-300 uppercase tracking-wider text-xs">
+                Book Now
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -118,9 +120,11 @@ const Navbar = () => {
                   </a>
                 )
               ))}
-              <button className="btn-primary w-full">
-                Book Now
-              </button>
+              <Link to="/booking" className="w-full">
+                <button className="btn-primary w-full">
+                  Book Now
+                </button>
+              </Link>
             </div>
           </div>
         )}

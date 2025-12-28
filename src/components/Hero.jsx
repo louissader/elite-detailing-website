@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -40,12 +41,16 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="btn-primary">
-                Book Now
-              </button>
-              <button className="btn-secondary">
-                Get a Quote
-              </button>
+              <Link to="/booking">
+                <button className="btn-primary">
+                  Book Now
+                </button>
+              </Link>
+              <Link to="/booking">
+                <button className="btn-secondary">
+                  Get a Quote
+                </button>
+              </Link>
             </div>
 
             {/* Trust Indicators - Quick Stats */}
