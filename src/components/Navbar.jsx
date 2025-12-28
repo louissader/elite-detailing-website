@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +15,8 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
@@ -42,13 +43,23 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('/') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -87,14 +98,25 @@ const Navbar = () => {
           <div className="md:hidden pb-6 border-t border-luxury-gold/20 mt-2">
             <div className="flex flex-col space-y-4 mt-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               <button className="btn-primary w-full">
                 Book Now
