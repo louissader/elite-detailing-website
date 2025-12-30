@@ -3,10 +3,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 // Import team images
-import wesleyImg from '../assets/images/team/wesley.jpeg';
-import dylanImg from '../assets/images/team/dylan.jpeg';
-import louisImg from '../assets/images/team/louis.jpeg';
-import vedanthImg from '../assets/images/team/vedanth.jpeg';
+import wesleyImg from '../assets/images/team/wesley-baccay.JPG';
+import dylanImg from '../assets/images/team/dylan-hovey.JPEG';
+import louisImg from '../assets/images/team/louis-sader.JPG';
+import vedanthImg from '../assets/images/team/vader.jpg';
 
 function Contact() {
   const [formData, setFormData] = useState({
