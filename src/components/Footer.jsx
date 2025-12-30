@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+  const [year, setYear] = useState(2025);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-darkGray border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -75,7 +81,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Elite Detailing. All rights reserved.
+            &copy; {year} Elite Detailing. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
             <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
