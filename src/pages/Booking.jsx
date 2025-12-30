@@ -108,7 +108,7 @@ const Booking = () => {
       }
     } catch (error) {
       console.error('Booking submission error:', error);
-      setSubmitError('An unexpected error occurred. Please try again or call us at (555) 123-4567.');
+      setSubmitError('An unexpected error occurred. Please try again or call us at 603-275-7513.');
     } finally {
       setIsSubmitting(false);
     }
@@ -285,7 +285,7 @@ const Booking = () => {
                             value={bookingData.customer.phone}
                             onChange={(e) => handleInputChange('phone', e.target.value)}
                             className="w-full bg-luxury-black border-2 border-luxury-gold/20 text-luxury-white p-3 rounded-sm focus:border-luxury-gold focus:outline-none"
-                            placeholder="(555) 123-4567"
+                            placeholder="603-275-7513"
                           />
                         </div>
 
@@ -415,7 +415,7 @@ const Booking = () => {
                       Questions? Call us:
                     </p>
                     <p className="text-luxury-gold font-semibold">
-                      (555) 123-4567
+                      603-275-7513
                     </p>
                   </div>
                 </div>

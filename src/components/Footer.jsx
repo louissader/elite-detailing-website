@@ -65,13 +65,13 @@ function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>New England & New York</li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-gold transition-colors">
-                  (555) 123-4567
+                <a href="tel:+16032757513" className="hover:text-gold transition-colors">
+                  603-275-7513
                 </a>
               </li>
               <li>
-                <a href="mailto:info@elitedetailing.com" className="hover:text-gold transition-colors">
-                  info@elitedetailing.com
+                <a href="mailto:louissader42@gmail.com" className="hover:text-gold transition-colors">
+                  louissader42@gmail.com
                 </a>
               </li>
             </ul>

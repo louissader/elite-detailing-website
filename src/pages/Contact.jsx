@@ -127,8 +127,8 @@ function Contact() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-heading text-white mb-1">Phone</h3>
-                <a href="tel:+15551234567" className="text-gray-300 hover:text-gold transition-colors text-sm">
-                  (555) 123-4567
+                <a href="tel:+16032757513" className="text-gray-300 hover:text-gold transition-colors text-sm">
+                  603-275-7513
                 </a>
               </div>
 
@@ -139,8 +139,8 @@ function Contact() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-heading text-white mb-1">Email</h3>
-                <a href="mailto:info@elitedetailing.com" className="text-gray-300 hover:text-gold transition-colors text-sm">
-                  info@elitedetailing.com
+                <a href="mailto:louissader42@gmail.com" className="text-gray-300 hover:text-gold transition-colors text-sm">
+                  louissader42@gmail.com
                 </a>
               </div>
 
@@ -219,7 +219,7 @@ function Contact() {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-black border border-gold/20 rounded-lg text-white focus:border-gold focus:outline-none transition-colors"
-                placeholder="(555) 123-4567"
+                placeholder="603-275-7513"
               />
             </div>
 
