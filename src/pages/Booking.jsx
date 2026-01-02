@@ -118,35 +118,35 @@ const Booking = () => {
     <div className="min-h-screen bg-luxury-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-12 bg-gradient-to-b from-luxury-dark-gray to-luxury-black">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      {/* Hero Section - Mobile responsive padding and text sizes */}
+      <section className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 bg-gradient-to-b from-luxury-dark-gray to-luxury-black">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-luxury-gold uppercase tracking-widest text-sm mb-4 font-semibold">
+            <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 font-semibold">
               Book Your Appointment
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-luxury-white mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-white mb-3 sm:mb-4">
               Schedule Your
-              <span className="block text-luxury-gold mt-2">
+              <span className="block text-luxury-gold mt-1 sm:mt-2">
                 Elite Detailing Service
               </span>
             </h1>
-            <p className="text-lg text-luxury-white/70">
+            <p className="text-sm sm:text-base md:text-lg text-luxury-white/70">
               Complete your booking in 3 simple steps
             </p>
           </div>
         </div>
       </section>
 
-      {/* Progress Steps */}
-      <section className="py-8 bg-luxury-dark-gray border-y border-luxury-gold/20">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      {/* Progress Steps - Mobile responsive with smaller circles and tighter spacing */}
+      <section className="py-4 sm:py-6 md:py-8 bg-luxury-dark-gray border-y border-luxury-gold/20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="flex justify-between max-w-4xl mx-auto">
             {steps.map((step, index) => (
               <div key={step.number} className="flex items-center flex-1">
                 <div className="flex flex-col items-center flex-1">
                   <div
-                    className={`w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold transition-all duration-300 ${
+                    className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 flex items-center justify-center font-bold text-sm sm:text-base transition-all duration-300 ${
                       currentStep >= step.number
                         ? 'border-luxury-gold bg-luxury-gold text-luxury-black'
                         : 'border-luxury-gold/30 text-luxury-white/30'
@@ -154,20 +154,20 @@ const Booking = () => {
                   >
                     {step.number}
                   </div>
-                  <div className="text-center mt-2 hidden md:block">
+                  <div className="text-center mt-1 sm:mt-2 hidden sm:block">
                     <p
-                      className={`text-sm font-semibold ${
+                      className={`text-xs sm:text-sm font-semibold ${
                         currentStep >= step.number ? 'text-luxury-gold' : 'text-luxury-white/50'
                       }`}
                     >
                       {step.title}
                     </p>
-                    <p className="text-xs text-luxury-white/40">{step.description}</p>
+                    <p className="text-xs text-luxury-white/40 hidden md:block">{step.description}</p>
                   </div>
                 </div>
                 {index < steps.length - 1 && (
                   <div
-                    className={`h-0.5 flex-1 mx-2 transition-all duration-300 ${
+                    className={`h-0.5 flex-1 mx-1 sm:mx-2 transition-all duration-300 ${
                       currentStep > step.number ? 'bg-luxury-gold' : 'bg-luxury-gold/20'
                     }`}
                   />
@@ -178,31 +178,31 @@ const Booking = () => {
         </div>
       </section>
 
-      {/* Booking Form */}
-      <section className="py-16 bg-luxury-black">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      {/* Booking Form - Mobile responsive padding and grid */}
+      <section className="py-8 sm:py-12 md:py-16 bg-luxury-black">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
               {/* Main Form Area */}
               <div className="lg:col-span-2">
-                <div className="bg-luxury-dark-gray border border-luxury-gold/20 p-8 rounded-sm">
+                <div className="bg-luxury-dark-gray border border-luxury-gold/20 p-4 sm:p-6 md:p-8 rounded-sm">
                   {/* Step 1: Service Selection */}
                   {currentStep === 1 && (
                     <div>
-                      <h2 className="text-2xl font-bold text-luxury-white mb-6">
+                      <h2 className="text-xl sm:text-2xl font-bold text-luxury-white mb-4 sm:mb-6">
                         Select Your Service Package
                       </h2>
                       <PricingCalculator
                         onPriceChange={handlePriceChange}
                         onServiceSelect={handleServiceSelect}
                       />
-                      <div className="mt-8">
+                      <div className="mt-6 sm:mt-8">
                         <button
                           onClick={() => setCurrentStep(2)}
                           disabled={!canProceedToStep2}
                           className={`w-full ${
                             canProceedToStep2 ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
-                          } py-4`}
+                          } py-3 sm:py-4`}
                         >
                           Continue to Date & Time
                         </button>
@@ -213,17 +213,17 @@ const Booking = () => {
                   {/* Step 2: Date & Time Selection */}
                   {currentStep === 2 && (
                     <div>
-                      <h2 className="text-2xl font-bold text-luxury-white mb-6">
+                      <h2 className="text-xl sm:text-2xl font-bold text-luxury-white mb-4 sm:mb-6">
                         Choose Your Appointment
                       </h2>
                       <AppointmentCalendar
                         onDateSelect={handleDateSelect}
                         onTimeSelect={handleTimeSelect}
                       />
-                      <div className="mt-8 flex gap-4">
+                      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <button
                           onClick={() => setCurrentStep(1)}
-                          className="flex-1 btn-secondary py-4"
+                          className="flex-1 btn-secondary py-3 sm:py-4"
                         >
                           Back
                         </button>
@@ -232,7 +232,7 @@ const Booking = () => {
                           disabled={!canProceedToStep3}
                           className={`flex-1 ${
                             canProceedToStep3 ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
-                          } py-4`}
+                          } py-3 sm:py-4`}
                         >
                           Continue to Details
                         </button>
@@ -243,10 +243,10 @@ const Booking = () => {
                   {/* Step 3: Customer Information */}
                   {currentStep === 3 && (
                     <div>
-                      <h2 className="text-2xl font-bold text-luxury-white mb-6">
+                      <h2 className="text-xl sm:text-2xl font-bold text-luxury-white mb-4 sm:mb-6">
                         Your Contact Information
                       </h2>
-                      <form onSubmit={handleSubmit} className="space-y-6">
+                      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                         <div>
                           <label className="block text-luxury-gold text-sm font-semibold mb-2 uppercase tracking-wider">
                             Full Name *
@@ -309,11 +309,11 @@ const Booking = () => {
                           </div>
                         )}
 
-                        <div className="flex gap-4 mt-8">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
                           <button
                             type="button"
                             onClick={() => setCurrentStep(2)}
-                            className="flex-1 btn-secondary py-4"
+                            className="flex-1 btn-secondary py-3 sm:py-4"
                             disabled={isSubmitting}
                           >
                             Back
@@ -323,7 +323,7 @@ const Booking = () => {
                             disabled={!canSubmit || isSubmitting}
                             className={`flex-1 ${
                               canSubmit && !isSubmitting ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
-                            } py-4`}
+                            } py-3 sm:py-4`}
                           >
                             {isSubmitting ? 'Processing...' : 'Confirm Booking'}
                           </button>
@@ -334,10 +334,10 @@ const Booking = () => {
                 </div>
               </div>
 
-              {/* Booking Summary Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="bg-luxury-dark-gray border border-luxury-gold/20 p-6 rounded-sm sticky top-24">
-                  <h3 className="text-luxury-gold text-lg font-bold mb-4 uppercase tracking-wider">
+              {/* Booking Summary Sidebar - Order on mobile to appear first */}
+              <div className="lg:col-span-1 order-first lg:order-last">
+                <div className="bg-luxury-dark-gray border border-luxury-gold/20 p-4 sm:p-6 rounded-sm lg:sticky lg:top-24">
+                  <h3 className="text-luxury-gold text-base sm:text-lg font-bold mb-3 sm:mb-4 uppercase tracking-wider">
                     Booking Summary
                   </h3>
 
@@ -400,7 +400,7 @@ const Booking = () => {
                       <p className="text-luxury-white/50 text-xs uppercase tracking-wider mb-1">
                         Estimated Total
                       </p>
-                      <p className="text-luxury-gold text-3xl font-bold">
+                      <p className="text-luxury-gold text-2xl sm:text-3xl font-bold">
                         ${bookingData.totalPrice.toLocaleString()}
                       </p>
                       <p className="text-luxury-white/40 text-xs mt-1">

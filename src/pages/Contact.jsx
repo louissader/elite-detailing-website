@@ -83,23 +83,23 @@ function Contact() {
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      {/* Combined Hero Section with Team and Contact Info */}
-      <section className="relative pt-24 pb-12 px-4 min-h-screen flex flex-col">
+      {/* Combined Hero Section with Team and Contact Info - Mobile responsive */}
+      <section className="relative pt-20 sm:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 min-h-screen flex flex-col">
         <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent"></div>
 
         {/* Meet Our Team */}
         <div className="max-w-7xl mx-auto relative z-10 flex-1 flex flex-col justify-center">
-          <div className="text-center mb-8">
-            <h1 className="font-heading text-4xl md:text-5xl text-white mb-3">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-2 sm:mb-3">
               Meet Our Team
             </h1>
-            <p className="text-lg text-gray-300">
+            <p className="text-base sm:text-lg text-gray-300">
               Expert detailing professionals serving the Northeast
             </p>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* Team Grid - Responsive: 1 col mobile, 2 cols tablet, 4 cols desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-darkGray border border-gold/20 rounded-lg overflow-hidden hover:border-gold transition-colors">
                 <div className="aspect-square overflow-hidden bg-black/50">
@@ -136,12 +136,12 @@ function Contact() {
             ))}
           </div>
 
-          {/* Get in Touch Section */}
-          <div className="bg-darkGray/50 border border-gold/20 rounded-lg p-8">
-            <h2 className="font-heading text-3xl text-white mb-6 text-center">
+          {/* Get in Touch Section - Mobile responsive padding */}
+          <div className="bg-darkGray/50 border border-gold/20 rounded-lg p-4 sm:p-6 md:p-8">
+            <h2 className="font-heading text-2xl sm:text-3xl text-white mb-4 sm:mb-6 text-center">
               Get in Touch
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               <div className="text-center">
                 <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,20 +183,20 @@ function Contact() {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="py-20 px-4 bg-darkGray">
+      {/* Contact Form - Mobile responsive padding and spacing */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-darkGray">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl text-white mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-3 sm:mb-4">
               Send Us a Message
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300">
               Have questions? We're here to help.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-black/50 border border-gold/20 rounded-lg p-8">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <form onSubmit={handleSubmit} className="bg-black/50 border border-gold/20 rounded-lg p-4 sm:p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2 text-sm font-medium">
                   Full Name *
@@ -230,7 +230,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <label htmlFor="phone" className="block text-gray-300 mb-2 text-sm font-medium">
                 Phone Number
               </label>
@@ -245,7 +245,7 @@ function Contact() {
               />
             </div>
 
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <label htmlFor="message" className="block text-gray-300 mb-2 text-sm font-medium">
                 Message *
               </label>
@@ -263,12 +263,12 @@ function Contact() {
 
             {/* Success/Error Message */}
             {submitMessage && (
-              <div className={`p-4 rounded-lg mb-6 ${
+              <div className={`p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 ${
                 submitMessage.type === 'success'
                   ? 'bg-green-900/20 border border-green-500/50'
                   : 'bg-red-900/20 border border-red-500/50'
               }`}>
-                <p className={submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}>
+                <p className={`text-sm sm:text-base ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
                   {submitMessage.text}
                 </p>
               </div>
@@ -277,7 +277,7 @@ function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full px-8 py-4 rounded-lg font-semibold transition-colors text-lg ${
+              className={`w-full px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors text-base sm:text-lg ${
                 isSubmitting
                   ? 'bg-gold/50 text-black/50 cursor-not-allowed'
                   : 'bg-gold text-black hover:bg-gold/90'
@@ -289,18 +289,18 @@ function Contact() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
+      {/* CTA Section - Mobile responsive */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl text-white mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8">
             Book your detailing service today and experience the Elite difference.
           </p>
           <a
             href="/booking"
-            className="inline-block bg-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-gold/90 transition-colors text-lg"
+            className="inline-block bg-gold text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gold/90 transition-colors text-base sm:text-lg"
           >
             Schedule Your Service
           </a>
