@@ -95,39 +95,41 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Solid background with smooth slide-down animation */}
+        {/* Mobile Menu - Full-width solid background dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-6 border-t border-luxury-gold/20 mt-2 animate-fadeIn">
-            <div className="flex flex-col space-y-4 mt-6">
-              {navLinks.map((link) => (
-                link.href.startsWith('/') ? (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium py-2 px-2 rounded hover:bg-luxury-gold/10"
+          <div className="md:hidden absolute left-0 right-0 top-full bg-luxury-black/98 backdrop-blur-lg border-t border-luxury-gold/20 shadow-2xl">
+            <div className="container mx-auto px-4 sm:px-6 py-6">
+              <div className="flex flex-col space-y-4">
+                {navLinks.map((link) => (
+                  link.href.startsWith('/') ? (
+                    <Link
+                      key={link.name}
+                      to={link.href}
+                      className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium py-3 px-4 rounded hover:bg-luxury-gold/10 border border-transparent hover:border-luxury-gold/30"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium py-3 px-4 rounded hover:bg-luxury-gold/10 border border-transparent hover:border-luxury-gold/30"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  )
+                ))}
+                <Link to="/booking" className="w-full pt-2">
+                  <button
+                    className="btn-primary w-full"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-luxury-white hover:text-luxury-gold transition-colors duration-300 uppercase text-sm tracking-wider font-medium py-2 px-2 rounded hover:bg-luxury-gold/10"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                )
-              ))}
-              <Link to="/booking" className="w-full pt-2">
-                <button
-                  className="btn-primary w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Book Now
-                </button>
-              </Link>
+                    Book Now
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         )}
