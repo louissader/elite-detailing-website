@@ -197,20 +197,20 @@ const Services = () => {
     <div className="min-h-screen bg-luxury-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-luxury-dark-gray to-luxury-black">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      {/* Hero Section - Mobile optimized padding and text */}
+      <section className="relative pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-luxury-dark-gray to-luxury-black">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-4xl mx-auto">
-            <p className="text-luxury-gold uppercase tracking-widest text-sm mb-4 font-semibold">
+            <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 font-semibold">
               Premium Services
             </p>
-            <h1 className="text-5xl md:text-6xl font-bold text-luxury-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-luxury-white mb-4 sm:mb-6">
               Detailing Packages &
-              <span className="block text-luxury-gold mt-2">
+              <span className="block text-luxury-gold mt-1 sm:mt-2">
                 Service Offerings
               </span>
             </h1>
-            <p className="text-xl text-luxury-white/70 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-luxury-white/70 leading-relaxed px-2">
               From luxury automobiles to private jets, we offer comprehensive detailing
               solutions tailored to your needs. Each package is designed to deliver
               exceptional results with meticulous attention to detail.
@@ -219,48 +219,48 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Category Selector */}
-      <section className="py-12 bg-luxury-dark-gray border-y border-luxury-gold/20">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex justify-center gap-4">
+      {/* Category Selector - Stack on mobile, side-by-side on tablet+ */}
+      <section className="py-8 sm:py-10 md:py-12 bg-luxury-dark-gray border-y border-luxury-gold/20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-2xl mx-auto">
             <button
               onClick={() => setSelectedCategory('auto')}
-              className={`px-8 py-4 rounded-sm uppercase tracking-wider text-sm font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-sm uppercase tracking-wider text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 selectedCategory === 'auto'
                   ? 'bg-luxury-gold text-luxury-black'
                   : 'bg-transparent border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-black'
               }`}
             >
-              Luxury Auto Detailing
+              <span className="hidden sm:inline">Luxury </span>Auto Detailing
             </button>
             <button
               onClick={() => setSelectedCategory('jet')}
-              className={`px-8 py-4 rounded-sm uppercase tracking-wider text-sm font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-sm uppercase tracking-wider text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 selectedCategory === 'jet'
                   ? 'bg-luxury-gold text-luxury-black'
                   : 'bg-transparent border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-black'
               }`}
             >
-              Private Jet Detailing
+              <span className="hidden sm:inline">Private </span>Jet Detailing
             </button>
           </div>
         </div>
       </section>
 
-      {/* Service Packages */}
-      <section className="py-24 bg-luxury-black">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-luxury-white mb-4">
+      {/* Service Packages - Responsive grid: 1 col mobile, 2 cols tablet, 3 cols desktop */}
+      <section className="py-12 sm:py-16 md:py-24 bg-luxury-black">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-white mb-3 sm:mb-4 px-2">
               {selectedCategory === 'auto' ? 'Auto Detailing Packages' : 'Private Jet Detailing Packages'}
             </h2>
-            <p className="text-luxury-white/60 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-luxury-white/60 max-w-2xl mx-auto px-4">
               Choose the package that best suits your vehicle's needs. All packages include
               premium products and expert craftsmanship.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
             {(selectedCategory === 'auto' ? autoPackages : jetPackages).map((pkg, index) => (
               <ServicePackage key={index} {...pkg} />
             ))}

@@ -3,73 +3,73 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/80 to-transparent z-10"></div>
 
       {/* Placeholder for background image - Replace with actual luxury car/jet image */}
       <div className="absolute inset-0 bg-luxury-dark-gray">
-        <div className="w-full h-full flex items-center justify-center text-luxury-gold/20 text-6xl">
+        <div className="w-full h-full flex items-center justify-center text-luxury-gold/20 text-3xl sm:text-4xl md:text-6xl">
           {/* Temporary placeholder - replace with actual image */}
-          <div className="text-center">
-            <p className="text-sm tracking-widest">Background Image:</p>
-            <p className="text-lg mt-2">Luxury Vehicle or Private Jet</p>
+          <div className="text-center px-4">
+            <p className="text-xs sm:text-sm tracking-widest">Background Image:</p>
+            <p className="text-sm sm:text-base md:text-lg mt-2">Luxury Vehicle or Private Jet</p>
           </div>
         </div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-20 h-full flex items-center">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="max-w-3xl">
             {/* Accent Line */}
-            <div className="w-20 h-1 bg-luxury-gold mb-8"></div>
+            <div className="w-16 sm:w-20 h-0.5 sm:h-1 bg-luxury-gold mb-6 sm:mb-8"></div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-luxury-white mb-6 leading-tight">
+            {/* Main Heading - Mobile-first responsive sizing */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-luxury-white mb-4 sm:mb-6 leading-tight">
               Precision Detailing
-              <span className="block text-luxury-gold mt-2">
+              <span className="block text-luxury-gold mt-1 sm:mt-2">
                 For Elite Vehicles
               </span>
             </h1>
 
-            {/* Tagline/Value Proposition */}
-            <p className="text-xl md:text-2xl text-luxury-white/80 mb-12 leading-relaxed font-light">
+            {/* Tagline/Value Proposition - Mobile-optimized text size */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-luxury-white/80 mb-8 sm:mb-10 md:mb-12 leading-relaxed font-light">
               Experience unparalleled care for your luxury automobiles and private jets.
               Where craftsmanship meets perfection.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Link to="/booking">
-                <button className="btn-primary">
+            {/* CTA Buttons - Stack on mobile, side-by-side on tablet+ */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
+              <Link to="/booking" className="w-full sm:w-auto">
+                <button className="btn-primary w-full sm:w-auto">
                   Book Now
                 </button>
               </Link>
-              <Link to="/booking">
-                <button className="btn-secondary">
+              <Link to="/booking" className="w-full sm:w-auto">
+                <button className="btn-secondary w-full sm:w-auto">
                   Get a Quote
                 </button>
               </Link>
             </div>
 
-            {/* Trust Indicators - Quick Stats */}
-            <div className="mt-16 grid grid-cols-3 gap-8">
-              <div className="border-l-2 border-luxury-gold pl-4">
-                <p className="text-3xl font-bold text-luxury-gold">15+</p>
-                <p className="text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
+            {/* Trust Indicators - Responsive grid: 1 col mobile, 3 cols tablet+ */}
+            <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              <div className="border-l-2 border-luxury-gold pl-3 sm:pl-4 py-2 sm:py-0">
+                <p className="text-2xl sm:text-3xl font-bold text-luxury-gold">15+</p>
+                <p className="text-xs sm:text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
                   Years Experience
                 </p>
               </div>
-              <div className="border-l-2 border-luxury-gold pl-4">
-                <p className="text-3xl font-bold text-luxury-gold">500+</p>
-                <p className="text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
+              <div className="border-l-2 border-luxury-gold pl-3 sm:pl-4 py-2 sm:py-0">
+                <p className="text-2xl sm:text-3xl font-bold text-luxury-gold">500+</p>
+                <p className="text-xs sm:text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
                   Satisfied Clients
                 </p>
               </div>
-              <div className="border-l-2 border-luxury-gold pl-4">
-                <p className="text-3xl font-bold text-luxury-gold">100%</p>
-                <p className="text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
+              <div className="border-l-2 border-luxury-gold pl-3 sm:pl-4 py-2 sm:py-0">
+                <p className="text-2xl sm:text-3xl font-bold text-luxury-gold">100%</p>
+                <p className="text-xs sm:text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
                   Satisfaction Rate
                 </p>
               </div>
@@ -78,14 +78,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      {/* Scroll Indicator - Hidden on very small screens */}
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 hidden xs:block">
         <div className="flex flex-col items-center animate-bounce">
           <span className="text-luxury-gold text-xs uppercase tracking-widest mb-2">
             Scroll
           </span>
           <svg
-            className="w-6 h-6 text-luxury-gold"
+            className="w-5 h-5 sm:w-6 sm:h-6 text-luxury-gold"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
