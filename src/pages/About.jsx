@@ -7,49 +7,134 @@ function About() {
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4">
+      {/* Hero Section - Mobile responsive */}
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <h1 className="font-heading text-5xl md:text-6xl text-white mb-6">
-            Excellence in Every Detail
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">
+            From The Track to Your Driveway
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl">
-            Setting the standard for luxury automotive and aviation detailing across New England and New York.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">
+            Four teammates. One passion. Precision detailing across New England.
           </p>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-20 px-4 bg-darkGray">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-heading text-4xl text-white mb-6">Our Story</h2>
-              <div className="space-y-4 text-gray-300">
-                <p>
-                  Founded on the principle that exceptional vehicles deserve exceptional care, we have established ourselves as the premier detailing service for discerning clients throughout New England and New York.
-                </p>
-                <p>
-                  Our team brings years of specialized experience working with high-performance automobiles and private aircraft, understanding the unique requirements and standards that luxury assets demand.
-                </p>
-                <p>
-                  From rare exotic cars to corporate jets, we treat every vehicle with the meticulous attention and expertise it deserves, using only premium products and proven techniques refined over years of practice.
-                </p>
-              </div>
+      {/* Our Story - Condensed */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-darkGray border border-gold/20 rounded-lg p-6 sm:p-8 md:p-10">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">Our Story</h2>
+            <div className="space-y-4 text-gray-300 text-sm sm:text-base">
+              <p>
+                We're four former Roger Williams University cross country and track athletes who turned our shared passion for performance into a business. Our love for speed didn't end with running—it evolved through Formula 1, where precision, attention to detail, and relentless pursuit of perfection are everything.
+              </p>
+              <p>
+                That same mindset drives how we detail luxury vehicles. One of our team members, Vedanth, has already built trust in the luxury car community through his Instagram, photographing and filming high-end automobiles. We've taken that expertise and applied it to hands-on detailing services.
+              </p>
+              <p>
+                Between the four of us, we cover New England—from Massachusetts and New Hampshire to Rhode Island, Connecticut, and New York. Whether it's your exotic car or private jet, we bring the same dedication we had on the track to every detail.
+              </p>
             </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-8">
-              <div className="space-y-6">
-                <div className="border-l-4 border-gold pl-6">
-                  <h3 className="text-2xl font-heading text-white mb-2">Our Mission</h3>
-                  <p className="text-gray-300">
-                    To provide unparalleled detailing services that preserve and enhance the value of our clients' most prized possessions.
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage Map - Condensed */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-darkGray">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 md:mb-12 text-center">
+            Coverage Across New England
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-3 sm:p-4 md:p-6 text-center">
+              <h3 className="text-base sm:text-lg md:text-xl font-heading text-gold mb-1 sm:mb-2">New York</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Wesley</p>
+            </div>
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-3 sm:p-4 md:p-6 text-center">
+              <h3 className="text-base sm:text-lg md:text-xl font-heading text-gold mb-1 sm:mb-2">CT & RI</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Dylan</p>
+            </div>
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-3 sm:p-4 md:p-6 text-center">
+              <h3 className="text-base sm:text-lg md:text-xl font-heading text-gold mb-1 sm:mb-2">NH & MA</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Louis</p>
+            </div>
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-3 sm:p-4 md:p-6 text-center">
+              <h3 className="text-base sm:text-lg md:text-xl font-heading text-gold mb-1 sm:mb-2">NH & RI</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Vedanth</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Sets Us Apart - Condensed */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 md:mb-12 text-center">
+            Why Choose Us
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="bg-darkGray border border-gold/20 rounded-lg p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-heading text-white mb-1 sm:mb-2">F1-Inspired Precision</h3>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    We approach every detail like a pit crew—fast, precise, and obsessed with perfection.
                   </p>
                 </div>
-                <div className="border-l-4 border-gold pl-6">
-                  <h3 className="text-2xl font-heading text-white mb-2">Our Vision</h3>
-                  <p className="text-gray-300">
-                    To be the most trusted name in luxury detailing, known for exceptional quality, reliability, and customer service.
+              </div>
+            </div>
+
+            <div className="bg-darkGray border border-gold/20 rounded-lg p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-heading text-white mb-1 sm:mb-2">Proven Trust</h3>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    With an established presence in the luxury car community, we've already earned credibility.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-darkGray border border-gold/20 rounded-lg p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-heading text-white mb-1 sm:mb-2">Regional Coverage</h3>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    Four team members covering all of New England means fast, convenient service wherever you are.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-darkGray border border-gold/20 rounded-lg p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg md:text-xl font-heading text-white mb-1 sm:mb-2">Athlete Work Ethic</h3>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    The discipline and commitment we brought to the track now goes into every vehicle we service.
                   </p>
                 </div>
               </div>
@@ -58,160 +143,18 @@ function About() {
         </div>
       </section>
 
-      {/* Expertise */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading text-4xl text-white mb-12 text-center">
-            Specialized Expertise
+      {/* CTA - Mobile responsive */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">
+            Ready to Experience Elite Detailing?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-darkGray border border-gold/20 rounded-lg p-8 hover:border-gold transition-colors">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-heading text-white mb-4">Exotic Automobiles</h3>
-              <p className="text-gray-300">
-                Extensive experience with Ferrari, Lamborghini, Porsche, McLaren, and other high-performance marques requiring specialized care and knowledge.
-              </p>
-            </div>
-
-            <div className="bg-darkGray border border-gold/20 rounded-lg p-8 hover:border-gold transition-colors">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-heading text-white mb-4">Private Aviation</h3>
-              <p className="text-gray-300">
-                Certified in aircraft detailing with deep understanding of aviation-grade materials, FAA compliance, and the unique demands of jet maintenance.
-              </p>
-            </div>
-
-            <div className="bg-darkGray border border-gold/20 rounded-lg p-8 hover:border-gold transition-colors">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-heading text-white mb-4">Premium Products</h3>
-              <p className="text-gray-300">
-                We exclusively use professional-grade ceramic coatings, pH-neutral solutions, and premium microfiber materials safe for the most delicate finishes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Area */}
-      <section className="py-20 px-4 bg-darkGray">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-heading text-4xl text-white mb-8">
-            Serving the Northeast
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            We proudly service clients throughout New England and New York, with mobile detailing available for select locations and hangar services for aircraft.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6">
-              <h3 className="text-xl font-heading text-gold mb-2">Massachusetts</h3>
-              <p className="text-gray-400">Greater Boston & Cape Cod</p>
-            </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6">
-              <h3 className="text-xl font-heading text-gold mb-2">Connecticut</h3>
-              <p className="text-gray-400">Hartford & Coastal Areas</p>
-            </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6">
-              <h3 className="text-xl font-heading text-gold mb-2">Rhode Island</h3>
-              <p className="text-gray-400">Providence & Newport</p>
-            </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6">
-              <h3 className="text-xl font-heading text-gold mb-2">New York</h3>
-              <p className="text-gray-400">NYC Metro & Westchester</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading text-4xl text-white mb-12 text-center">
-            Our Commitment
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl text-gold">1</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-heading text-white mb-2">Precision & Care</h3>
-                <p className="text-gray-300">
-                  Every service is performed with surgical precision, treating each vehicle as if it were our own.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl text-gold">2</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-heading text-white mb-2">Transparency</h3>
-                <p className="text-gray-300">
-                  Clear communication about services, pricing, and timelines. No hidden fees, no surprises.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl text-gold">3</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-heading text-white mb-2">Discretion</h3>
-                <p className="text-gray-300">
-                  We understand the value of privacy and maintain strict confidentiality for all our clients.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl text-gold">4</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-heading text-white mb-2">Excellence</h3>
-                <p className="text-gray-300">
-                  We don't just meet standards—we set them. Continuous training and quality improvement are built into our process.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-heading text-4xl text-white mb-6">
-            Experience the Difference
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join our distinguished clientele and discover why we're the trusted choice for luxury detailing.
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8">
+            Let us bring the same precision to your vehicle that we brought to the track.
           </p>
           <a
             href="/booking"
-            className="inline-block bg-gold text-black px-8 py-4 rounded-lg font-semibold hover:bg-gold/90 transition-colors text-lg"
+            className="inline-block bg-gold text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gold/90 transition-colors text-sm sm:text-base md:text-lg"
           >
             Schedule Your Service
           </a>
