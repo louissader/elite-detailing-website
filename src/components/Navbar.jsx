@@ -24,7 +24,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled || mobileMenuOpen
+        mobileMenuOpen
+          ? 'bg-luxury-black shadow-lg'
+          : scrolled
           ? 'bg-luxury-black/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
@@ -97,7 +99,7 @@ const Navbar = () => {
 
         {/* Mobile Menu - Full-width solid background dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0 top-full bg-luxury-black/98 backdrop-blur-lg border-t border-luxury-gold/20 shadow-2xl">
+          <div className="md:hidden absolute left-0 right-0 top-full bg-luxury-black border-t border-luxury-gold/20 shadow-2xl">
             <div className="container mx-auto px-4 sm:px-6 py-6">
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
