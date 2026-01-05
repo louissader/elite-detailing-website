@@ -35,7 +35,7 @@ const Hero = () => {
 
             {/* Tagline - FRD: 16px minimum body text */}
             <p className="text-base sm:text-lg md:text-xl text-luxury-white/80 mb-6 sm:mb-8 md:mb-10 leading-relaxed">
-              Four former RWU athletes bringing precision and dedication to luxury auto and jet detailing across New England.
+              Four Roger Williams University NCAA cross country & track athletes bringing precision and dedication to luxury auto and jet detailing across New England.
             </p>
 
             {/* CTA Buttons - FRD: Full width on mobile, min 44px tap target */}
@@ -61,9 +61,9 @@ const Hero = () => {
                 </p>
               </div>
               <div className="border-l-2 border-luxury-gold pl-3 sm:pl-4 py-2">
-                <p className="text-2xl sm:text-3xl font-bold text-luxury-gold">RWU</p>
+                <p className="text-base sm:text-lg md:text-xl font-bold text-luxury-gold">Roger Williams University</p>
                 <p className="text-xs sm:text-sm text-luxury-white/60 uppercase tracking-wider mt-1">
-                  Alumni Team
+                  NCAA Athletes
                 </p>
               </div>
               <div className="border-l-2 border-luxury-gold pl-3 sm:pl-4 py-2">

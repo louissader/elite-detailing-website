@@ -8,10 +8,9 @@ function About() {
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      {/* Hero Section with Background Image */}
-      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
-        {/* Background Image with Enhanced Overlay for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent z-10"></div>
+      {/* Our Story Section - Background spans full width/height */}
+      <section className="relative min-h-screen flex items-start py-24 sm:py-32 px-4 sm:px-6">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src={car3}
@@ -21,30 +20,35 @@ function About() {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto relative z-20 text-center">
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">
-            From The Track to Your Driveway
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300">
-            Four teammates. One passion. Precision detailing across New England.
-          </p>
-        </div>
-      </section>
+        {/* Radial Gradient - Glow Effect Around Text Only (positioned in upper portion) */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background: `radial-gradient(
+              ellipse 700px 500px at center 30%,
+              rgba(0, 0, 0, 0.78) 0%,
+              rgba(0, 0, 0, 0.58) 40%,
+              transparent 70%
+            )`
+          }}
+        ></div>
 
-      {/* Our Story - Condensed */}
-      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-darkGray border border-gold/20 rounded-lg p-6 sm:p-8 md:p-10">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">Our Story</h2>
-            <div className="space-y-4 text-gray-300 text-sm sm:text-base">
+        {/* Content positioned in upper third (sky area) */}
+        <div className="max-w-3xl mx-auto relative z-20 -mt-5">
+          {/* Our Story Content */}
+          <div>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-6 sm:mb-8 text-center">
+              Our Story
+            </h1>
+            <div className="space-y-5 text-white text-sm sm:text-base md:text-lg">
               <p>
-                We're four former Roger Williams University cross country and track athletes who turned our shared passion for performance into a business. The discipline and precision we developed as athletes translates directly to how we approach every detail.
+                Four former Roger Williams University cross country and track athletes who turned their shared passion for performance into a business. The discipline and precision developed as athletes translates directly to how we approach every detail.
               </p>
               <p>
-                Our appreciation for high-performance vehicles comes from understanding what excellence looks like—whether on the track or in the garage. Vedanth has already built trust in the luxury car community through his Instagram, photographing and filming high-end automobiles. We've taken that expertise and applied it to professional detailing services.
+                Our appreciation for high-performance vehicles comes from understanding what excellence looks like, whether on the track or in the garage. We've taken that expertise and applied it to professional detailing services across New England.
               </p>
               <p>
-                Between the four of us, we cover New England—from Massachusetts and New Hampshire to Rhode Island, Connecticut, and New York. Whether it's your exotic car or private jet, we bring the same dedication and work ethic we had on the track to every vehicle we service.
+                Between the four of us, we cover Massachusetts, New Hampshire, Rhode Island, Connecticut, and New York. Whether it's your exotic car or private jet, we bring the same dedication to every vehicle we service.
               </p>
             </div>
           </div>

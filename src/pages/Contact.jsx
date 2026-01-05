@@ -120,8 +120,8 @@ function Contact() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xs sm:text-sm md:text-base font-heading text-white text-center mb-1">{member.name}</h3>
-                  <p className="text-gray-400 text-xs text-center mb-1">
+                  <h3 className="text-xs sm:text-sm md:text-base font-heading text-white text-center mb-1 font-bold">{member.name}</h3>
+                  <p className="text-gray-400 text-xs text-center mb-1 font-bold">
                     {member.location.split('&')[0].trim()}
                   </p>
                   {member.linkedin && (
@@ -150,8 +150,8 @@ function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1">Phone</h3>
-                <a href="tel:+16032757513" className="text-gray-300 hover:text-gold transition-colors text-xs sm:text-sm">
+                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1 font-bold">Phone</h3>
+                <a href="tel:+16032757513" className="text-gray-300 hover:text-gold transition-colors text-xs sm:text-sm font-bold">
                   603-275-7513
                 </a>
               </div>
@@ -162,8 +162,8 @@ function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1">Email</h3>
-                <a href="mailto:louissader42@gmail.com" className="text-gray-300 hover:text-gold transition-colors text-xs sm:text-sm break-all">
+                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1 font-bold">Email</h3>
+                <a href="mailto:louissader42@gmail.com" className="text-gray-300 hover:text-gold transition-colors text-xs sm:text-sm break-all font-bold">
                   louissader42@gmail.com
                 </a>
               </div>
@@ -175,8 +175,8 @@ function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1">Service Area</h3>
-                <p className="text-gray-300 text-xs sm:text-sm">
+                <h3 className="text-xs sm:text-sm md:text-base font-heading text-white mb-1 font-bold">Service Area</h3>
+                <p className="text-gray-300 text-xs sm:text-sm font-bold">
                   New England & NY
                 </p>
               </div>
