@@ -1,0 +1,17 @@
+# Elite Detailing - Robots.txt
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://elitedetailing.com/sitemap.xml
+
+# Crawl delay (optional - prevents aggressive crawling)
+Crawl-delay: 1
+
+# Disallow crawling of API endpoints
+Disallow: /api/
+
+# Disallow crawling of admin areas (when implemented)
+Disallow: /admin/

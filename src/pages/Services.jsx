@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import ServicePackage from '../components/ServicePackage';
 import BeforeAfterGallery from '../components/BeforeAfterGallery';
 import Footer from '../components/Footer';
+import jet1 from '../assets/images/jets/jet1.jpeg';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState('auto');
@@ -197,9 +198,20 @@ const Services = () => {
     <div className="min-h-screen bg-luxury-black">
       <Navbar />
 
-      {/* Hero Section - Mobile optimized padding and text */}
-      <section className="relative pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-luxury-dark-gray to-luxury-black">
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+      {/* Hero Section with Background Image */}
+      <section className="relative pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/90 to-luxury-black/60"></div>
+        <div className="absolute inset-0">
+          <img
+            src={jet1}
+            alt="Private jet detailing"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 font-semibold">
               Premium Services
@@ -248,7 +260,7 @@ const Services = () => {
       </section>
 
       {/* Service Packages - Responsive grid: 1 col mobile, 2 cols tablet, 3 cols desktop */}
-      <section className="py-12 sm:py-16 md:py-24 bg-luxury-black">
+      <section className="py-8 sm:py-12 md:py-16 bg-luxury-black">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-white mb-3 sm:mb-4 px-2">
@@ -277,10 +289,10 @@ const Services = () => {
       </section>
 
       {/* Add-On Services */}
-      <section className="py-24 bg-luxury-dark-gray">
+      <section className="py-8 sm:py-12 md:py-16 bg-luxury-dark-gray">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="text-center mb-16">
-            <p className="text-luxury-gold uppercase tracking-widest text-sm mb-4 font-semibold">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
+            <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3 font-semibold">
               Enhance Your Detail
             </p>
             <h2 className="text-4xl font-bold text-luxury-white mb-4">
@@ -314,10 +326,10 @@ const Services = () => {
       </section>
 
       {/* Before/After Gallery */}
-      <section className="py-24 bg-luxury-black">
+      <section className="py-8 sm:py-12 md:py-16 bg-luxury-black">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="text-center mb-16">
-            <p className="text-luxury-gold uppercase tracking-widest text-sm mb-4 font-semibold">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
+            <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-3 font-semibold">
               Our Work
             </p>
             <h2 className="text-4xl font-bold text-luxury-white mb-4">
@@ -346,7 +358,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-luxury-dark-gray to-luxury-black border-t border-luxury-gold/20">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-r from-luxury-dark-gray to-luxury-black border-t border-luxury-gold/20">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
           <h2 className="text-4xl font-bold text-luxury-white mb-6">
             Ready to Experience Elite Detailing?

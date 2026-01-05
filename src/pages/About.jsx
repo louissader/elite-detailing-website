@@ -1,15 +1,26 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import car3 from '../assets/images/cars/car3.jpg';
 
 function About() {
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      {/* Hero Section - Mobile responsive */}
+      {/* Hero Section with Background Image */}
       <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent"></div>
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60"></div>
+        <div className="absolute inset-0">
+          <img
+            src={car3}
+            alt="Luxury vehicle"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+        </div>
+
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">
             From The Track to Your Driveway
@@ -21,7 +32,7 @@ function About() {
       </section>
 
       {/* Our Story - Condensed */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="bg-darkGray border border-gold/20 rounded-lg p-6 sm:p-8 md:p-10">
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">Our Story</h2>
@@ -41,7 +52,7 @@ function About() {
       </section>
 
       {/* Coverage Map - Condensed */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-darkGray">
+      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 bg-darkGray">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 md:mb-12 text-center">
             Coverage Across New England
@@ -68,7 +79,7 @@ function About() {
       </section>
 
       {/* What Sets Us Apart - Condensed */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 md:mb-12 text-center">
             Why Choose Us
@@ -144,7 +155,7 @@ function About() {
       </section>
 
       {/* CTA - Mobile responsive */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
+      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 bg-gradient-to-r from-gold/10 to-gold/5 border-t border-gold/20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-4 sm:mb-6">
             Ready to Experience Elite Detailing?
