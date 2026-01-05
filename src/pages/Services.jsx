@@ -200,8 +200,8 @@ const Services = () => {
 
       {/* Hero Section with Background Image */}
       <section className="relative pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/90 to-luxury-black/60"></div>
+        {/* Background Image with Enhanced Overlay for Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/85 to-transparent z-10"></div>
         <div className="absolute inset-0">
           <img
             src={jet1}
@@ -211,7 +211,7 @@ const Services = () => {
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-20">
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-luxury-gold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 font-semibold">
               Premium Services
