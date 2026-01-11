@@ -42,7 +42,7 @@ function About() {
             </h1>
             <div className="space-y-5 text-white text-sm sm:text-base md:text-lg">
               <p>
-                Four former Roger Williams University cross country and track athletes who turned their shared passion for performance into a business. The discipline and precision developed as athletes translates directly to how we approach every detail.
+                Four Roger Williams University NCAA cross country and track athletes who turned their shared passion for performance into a business. The discipline and precision developed as athletes translates directly to how we approach every detail.
               </p>
               <p>
                 Our appreciation for high-performance vehicles comes from understanding what excellence looks like, whether on the track or in the garage. We've taken that expertise and applied it to professional detailing services across New England.
