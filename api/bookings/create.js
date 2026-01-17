@@ -127,12 +127,14 @@ export default async function handler(req, res) {
 
     // Sanitize package name (prevent XSS)
     const allowedPackages = [
-      'Basic Detail',
-      'Premium Detail',
-      'Elite Detail',
-      'Ultimate Detail',
-      'Express Detail',
-      'Maintenance Detail'
+      // Auto packages
+      'Essential Detail',
+      'Executive Detail',
+      'Concierge Detail',
+      // Jet packages
+      'Light Aircraft Detail',
+      'Executive Jet Detail',
+      'Fleet & Large Aircraft'
     ];
 
     if (!allowedPackages.includes(bookingData.package_name)) {

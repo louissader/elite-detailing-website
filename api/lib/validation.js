@@ -282,8 +282,8 @@ export const validateServiceCategory = (category) => {
  */
 export const validateVehicleSize = (size) => {
   const allowedSizes = [
-    'sedan', 'suv', 'truck', 'van', 'exotic',
-    'small-jet', 'medium-jet', 'large-jet', 'ultra-long-range'
+    // Frontend size multiplier options
+    'small', 'medium', 'large', 'xlarge'
   ];
 
   if (!size || typeof size !== 'string') {
