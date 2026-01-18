@@ -115,12 +115,14 @@ export default async function handler(req, res) {
 
     // Sanitize package name (prevent XSS in email)
     const allowedPackages = [
-      'Basic Detail',
-      'Premium Detail',
-      'Elite Detail',
-      'Ultimate Detail',
-      'Express Detail',
-      'Maintenance Detail'
+      // Auto packages
+      'Essential Detail',
+      'Executive Detail',
+      'Concierge Detail',
+      // Jet packages
+      'Light Aircraft Detail',
+      'Executive Jet Detail',
+      'Fleet & Large Aircraft'
     ];
 
     if (!allowedPackages.includes(bookingData.package_name)) {
@@ -324,7 +326,7 @@ export default async function handler(req, res) {
 
     // Send email via Resend (using sanitized email)
     const emailResponse = await resend.emails.send({
-      from: 'Elite Detailing <bookings@elitedetailing.com>', // Change to your verified domain
+      from: 'Elite Detailing <onboarding@resend.dev>', // Using Resend test domain
       to: [sanitizedBookingData.customer_email],
       subject: `Booking Confirmed - ${appointmentDate} at ${sanitizedBookingData.appointment_time}`,
       html: emailHtml
