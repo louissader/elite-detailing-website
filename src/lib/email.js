@@ -1,21 +1,16 @@
-// Email service using Resend
-// Note: In production, email sending should be done from a backend API route
-// This is a client-side implementation for demonstration
-
-const RESEND_API_KEY = import.meta.env.VITE_RESEND_API_KEY;
+// Email Templates for Elite Detailing
+//
+// SECURITY NOTE: Email sending is handled by the serverless API (/api/emails/send-confirmation)
+// This file only contains email template generation - NO API keys should be here
+// The actual Resend API calls happen server-side where the key is secure
 
 /**
- * Send booking confirmation email
+ * Generate booking confirmation email HTML template
+ * Note: Actual email sending happens via /api/emails/send-confirmation
  * @param {Object} bookingData - The booking details
- * @returns {Promise<Object>} - Response from email service
+ * @returns {Promise<Object>} - Generated email template
  */
-export const sendBookingConfirmation = async (bookingData) => {
-  // Check if Resend is configured
-  if (!RESEND_API_KEY) {
-    console.warn('Resend API key not configured. Email will not be sent.');
-    return { success: false, error: 'Email service not configured' };
-  }
-
+export const generateBookingConfirmationEmail = async (bookingData) => {
   try {
     // Format the appointment date
     const appointmentDate = new Date(bookingData.appointment_date).toLocaleDateString('en-US', {
@@ -190,38 +185,15 @@ export const sendBookingConfirmation = async (bookingData) => {
 </html>
     `;
 
-    // Send email via Resend API
-    // Note: In production, this should be done from a backend API route
-    // For now, we'll simulate the email sending
-
-    console.log('📧 Email would be sent to:', bookingData.customer_email);
-    console.log('📋 Email content:', emailHtml);
-
-    // In a real implementation with a backend API:
-    /*
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        from: 'Elite Detailing <bookings@elitedetailing.com>',
-        to: [bookingData.customer_email],
-        subject: `Booking Confirmed - ${appointmentDate} at ${bookingData.appointment_time}`,
-        html: emailHtml
-      })
-    });
-
-    const data = await response.json();
-    return { success: true, data };
-    */
-
-    // For now, return success with mock data
+    // Return the generated email template
+    // Actual sending is done by /api/emails/send-confirmation
     return {
       success: true,
-      message: 'Email notification prepared',
-      emailPreview: emailHtml
+      template: {
+        to: bookingData.customer_email,
+        subject: `Booking Confirmed - ${appointmentDate} at ${bookingData.appointment_time}`,
+        html: emailHtml
+      }
     };
 
   } catch (error) {

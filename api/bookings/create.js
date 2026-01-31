@@ -14,6 +14,15 @@ import {
   validateVehicleSize,
   sanitizeOptionalText
 } from '../lib/validation.js';
+import {
+  handlePreflight,
+  setCorsHeaders,
+  setSecurityHeaders,
+  validateOrigin,
+  checkIdempotency,
+  storeIdempotencyResponse,
+  getClientIP
+} from '../lib/security.js';
 
 // Server-side environment variables (not prefixed with VITE_)
 /* eslint-disable no-undef */
@@ -22,16 +31,33 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 /* eslint-enable no-undef */
 
 export default async function handler(req, res) {
+  // Set security headers
+  setSecurityHeaders(res);
+
   // Handle CORS preflight
-  if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    return res.status(200).json({});
+  if (handlePreflight(req, res)) {
+    return;
   }
 
   // Set CORS headers for actual request
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  setCorsHeaders(req, res);
+
+  // Validate origin (CSRF protection)
+  const originCheck = validateOrigin(req);
+  if (!originCheck.valid) {
+    console.warn('CSRF: Invalid origin', { origin: originCheck.origin, ip: getClientIP(req) });
+    return res.status(403).json({
+      success: false,
+      error: 'Forbidden: Invalid request origin'
+    });
+  }
+
+  // Check for duplicate requests (idempotency)
+  const idempotencyCheck = checkIdempotency(req);
+  if (idempotencyCheck.isDuplicate) {
+    console.log('Idempotency: Returning cached response');
+    return res.status(200).json(idempotencyCheck.cachedResponse);
+  }
 
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -198,11 +224,11 @@ export default async function handler(req, res) {
       id: data.id,
       customer: booking.customer_name,
       date: booking.appointment_date,
-      ip: req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || 'unknown'
+      ip: getClientIP(req)
     });
 
-    // Return success with minimal data (don't expose full booking object)
-    return res.status(200).json({
+    // Prepare success response
+    const successResponse = {
       success: true,
       data: {
         id: data.id,
@@ -212,7 +238,14 @@ export default async function handler(req, res) {
         total_price: data.total_price
       },
       message: 'Booking created successfully'
-    });
+    };
+
+    // Store response for idempotency (prevents duplicate bookings)
+    if (idempotencyCheck.key) {
+      storeIdempotencyResponse(idempotencyCheck.key, successResponse);
+    }
+
+    return res.status(200).json(successResponse);
 
   } catch (error) {
     console.error('Unexpected error:', error);

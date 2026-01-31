@@ -2,6 +2,14 @@
 // No direct Supabase access from browser - all operations go through secure backend
 
 /**
+ * Generate a unique idempotency key for request deduplication
+ * Prevents duplicate bookings if user double-clicks or network retries
+ */
+const generateIdempotencyKey = () => {
+  return `booking_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
+};
+
+/**
  * Create a new booking via serverless API
  * @param {Object} bookingData - Complete booking information
  * @returns {Promise<Object>} - Result with booking ID and status
@@ -23,11 +31,15 @@ export const createBooking = async (bookingData) => {
       vehicle_info: bookingData.customer.vehicleInfo || null
     };
 
-    // Call serverless API endpoint
+    // Generate idempotency key to prevent duplicate bookings
+    const idempotencyKey = generateIdempotencyKey();
+
+    // Call serverless API endpoint with idempotency key
     const response = await fetch('/api/bookings/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Idempotency-Key': idempotencyKey,
       },
       body: JSON.stringify(apiData)
     });
