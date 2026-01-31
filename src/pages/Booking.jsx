@@ -200,6 +200,7 @@ const Booking = () => {
                         <button
                           onClick={() => setCurrentStep(2)}
                           disabled={!canProceedToStep2}
+                          aria-disabled={!canProceedToStep2}
                           className={`w-full ${
                             canProceedToStep2 ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
                           } py-3 sm:py-4`}
@@ -230,6 +231,7 @@ const Booking = () => {
                         <button
                           onClick={() => setCurrentStep(3)}
                           disabled={!canProceedToStep3}
+                          aria-disabled={!canProceedToStep3}
                           className={`flex-1 ${
                             canProceedToStep3 ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
                           } py-3 sm:py-4`}
@@ -302,9 +304,13 @@ const Booking = () => {
                           />
                         </div>
 
-                        {/* Error Display */}
+                        {/* Error Display - Accessible alert */}
                         {submitError && (
-                          <div className="bg-red-900/20 border border-red-500/50 p-4 rounded-sm">
+                          <div
+                            role="alert"
+                            aria-live="assertive"
+                            className="bg-red-900/20 border border-red-500/50 p-4 rounded-sm"
+                          >
                             <p className="text-red-400 text-sm">{submitError}</p>
                           </div>
                         )}
@@ -321,6 +327,8 @@ const Booking = () => {
                           <button
                             type="submit"
                             disabled={!canSubmit || isSubmitting}
+                            aria-disabled={!canSubmit || isSubmitting}
+                            aria-busy={isSubmitting}
                             className={`flex-1 ${
                               canSubmit && !isSubmitting ? 'btn-primary' : 'bg-luxury-gold/30 text-luxury-black/50 cursor-not-allowed'
                             } py-3 sm:py-4`}

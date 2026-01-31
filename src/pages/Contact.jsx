@@ -263,13 +263,17 @@ function Contact() {
               ></textarea>
             </div>
 
-            {/* Success/Error Message */}
+            {/* Success/Error Message - Accessible alert */}
             {submitMessage && (
-              <div className={`p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 ${
-                submitMessage.type === 'success'
-                  ? 'bg-green-900/20 border border-green-500/50'
-                  : 'bg-red-900/20 border border-red-500/50'
-              }`}>
+              <div
+                role="alert"
+                aria-live="polite"
+                className={`p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 ${
+                  submitMessage.type === 'success'
+                    ? 'bg-green-900/20 border border-green-500/50'
+                    : 'bg-red-900/20 border border-red-500/50'
+                }`}
+              >
                 <p className={`text-sm sm:text-base ${submitMessage.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
                   {submitMessage.text}
                 </p>
