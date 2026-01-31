@@ -8,13 +8,15 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/80 to-transparent z-10"></div>
 
-      {/* Actual Background Image */}
+      {/* Actual Background Image - Priority loading for LCP */}
       <div className="absolute inset-0">
         <img
           src={heroCarImg}
           alt="Luxury vehicle detailing"
           className="w-full h-full object-cover object-center"
           loading="eager"
+          decoding="sync"
+          fetchpriority="high"
         />
       </div>
 

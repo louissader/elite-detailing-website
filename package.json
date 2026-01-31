@@ -1,14 +1,16 @@
 {
   "name": "elite-detailing",
   "private": true,
-  "version": "1.9.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "node debug-env.js && vite build",
+    "build:analyze": "vite build --mode production && npx vite-bundle-visualizer",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:supabase": "node test-supabase.js"
+    "test:supabase": "node test-supabase.js",
+    "optimize:images": "chmod +x scripts/optimize-images.sh && ./scripts/optimize-images.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
