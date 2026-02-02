@@ -81,8 +81,8 @@ function Footer() {
             &copy; {year} Elite Detailing. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-luxury-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-luxury-gold transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-luxury-gold transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-luxury-gold transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
